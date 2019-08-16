@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from './components/image';
 import API from './utils/API';
+import './App.css';
 
 // var my_images = [
 // 	{
@@ -33,7 +34,7 @@ class App extends React.Component {
 		score: 0,
 		images: [],
 		images_clicked: [],
-		searchterm: 'kites'
+		searchterm: 'puppies'
 	};
 	componentDidMount() {
 		API.search(this.state.searchterm).then((res) => {
@@ -76,6 +77,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<h1>The Clicky Game</h1>
 				<div>{this.state.searchterm}</div>
 				<input type="text" value={this.state.searchterm} onChange={this.searchGiphy} />
 				<div>{this.state.score}</div>
